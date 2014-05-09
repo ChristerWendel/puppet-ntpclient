@@ -1,0 +1,11 @@
+# /etc/ntp.conf, configuration for ntpd; see ntp.conf(5) for help
+driftfile /var/lib/ntp/ntp.drift
+
+# Listen to nothing but loopback
+interface ignore wildcard
+interface listen 127.0.0.1
+
+# Specify one or more NTP servers.
+<% @servers.each do |server| -%>
+server <%= server %>
+<% end -%>
