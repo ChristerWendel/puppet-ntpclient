@@ -5,7 +5,7 @@ class ntpclient::service {
   $ensure = $ntpclient::start ? {true => running, default => stopped}
 
   service { 'ntp':
-    ensure    => $ensure,
-    enable    => $ntpclient::enable,
+    ensure => $ensure,
+    enable => $ntpclient::enable,
   }
 }
